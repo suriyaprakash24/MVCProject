@@ -1,0 +1,173 @@
+@{
+    ViewData["Title"] = "About";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- about breadcrumb -->
+   <section class="w3l-about-breadcrumb position-relative text-center">
+    <div class="breadcrumb-bg breadcrumb-bg-about py-sm-5 py-4">
+      <div class="container py-lg-5 py-3">
+        <h2 class="title">About Us</h2>
+        <ul class="breadcrumbs-custom-path mt-2">
+          <li><a href="#url">Home</a></li>
+          <li class="active"><span class="fa fa-angle-double-right mx-2" aria-hidden="true"></span> About </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <!-- //about breadcrumb -->
+	<!--/services-sec-->
+	<div class="w3-services py-5">
+		<div class="container py-lg-4">
+			<div class="title-content text-left mb-lg-5 mb-4">
+				<h3 class="hny-title">Our Reimbursement Service</h3>
+			</div>
+			<div class="row w3-services-grids">
+				<div class="col-lg-4 col-md-6 causes-grid">
+					<div class="causes-grid-info">
+						<a href="blog-single.html"><img src="~/images/Travel.jpg" class="img-fuild" alt=""></a>
+						<a href="#" class="cause-title-wrap">
+							<h4 class="cause-title">Travel Reimbursement
+							</h4>
+						</a>
+						
+
+						
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6 causes-grid">
+					<div class="causes-grid-info">
+						<a href="blog-single.html"><img src="~/images/Medical.jpg" class="img-fuild" alt=""></a>
+						<a href="#" class="cause-title-wrap">
+							<h4 class="cause-title">Medical Reimbursement
+							</h4>
+						</a>
+						
+
+						
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6 causes-grid">
+					<div class="causes-grid-info">
+						<a href="blog-single.html"><img src="~/images/Food.jpg" class="img-fuild" alt=""></a>
+						<a href="#" class="cause-title-wrap">
+							<h4 class="cause-title">Food Expenses
+							</h4>
+						</a>
+						
+
+						
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6 causes-grid">
+					<div class="causes-grid-info">
+						<a href="blog-single.html"><img src="~/images/Telephone.jpg" class="img-fuild" alt=""></a>
+						<a href="#" class="cause-title-wrap">
+							<h4 class="cause-title">Telephone Reimbursement
+							</h4>
+						</a>
+            
+						
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6 causes-grid">
+					<div class="causes-grid-info">
+						<a href="blog-single.html"><img src="~/images/room.jpg" class="img-fuild" alt=""></a>
+						<a href="#" class="cause-title-wrap">
+							<h4 class="cause-title">Accommodation Claims
+							</h4>
+						</a>
+						
+						
+					</div>
+				</div>
+				
+				<div class="col-lg-4 col-md-6 causes-grid">
+					<div class="causes-grid-info">
+						<a href="blog-single.html"><img src="~/images/tax.jpg" class="img-fuild" alt=""></a>
+						<a href="#" class="cause-title-wrap">
+							<h4 class="cause-title">Tax Overpayments Claims
+							</h4>
+						</a>
+						
+						
+					</div>
+				</div>
+
+				<div class="col-lg-4 col-md-6 causes-grid">
+					<div class="causes-grid-info">
+						<a href="blog-single.html"><img src="~/images/enrolment.jpg" class="img-fuild" alt=""></a>
+						<a href="#" class="cause-title-wrap">
+							<h4 class="cause-title">Course Enrolment Claims
+							</h4>
+						</a>
+						
+						
+					</div>
+				</div>
+
+				<div class="col-lg-4 col-md-6 causes-grid">
+					<div class="causes-grid-info">
+						<a href="blog-single.html"><img src="~/images/Insurance.jpg" class="img-fuild" alt=""></a>
+						<a href="#" class="cause-title-wrap">
+							<h4 class="cause-title">Insurance Reimbursement
+							</h4>
+						</a>
+						
+						
+					</div>
+				</div>
+
+						<a href="#" class="cause-title-wrap">
+							 <marquee direction="right"> <h4 class="sub-title" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;And more
+							</h4></marquee>
+						</a>
+						
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--//services-sec-->
+
+    <!-- Template JavaScript -->
+  <script src="~/js/jquery-3.3.1.min.js"></script>
+  <script src="~/js/theme-change.js"></script>
+  <!-- disable body scroll which navbar is in active -->
+  <script>
+    $(function () {
+      $('.navbar-toggler').click(function () {
+        $('body').toggleClass('noscroll');
+      })
+    });
+  </script>
+  <!-- disable body scroll which navbar is in active -->
+  <!--/MENU-JS-->
+  <script>
+    $(window).on("scroll", function () {
+      var scroll = $(window).scrollTop();
+
+      if (scroll >= 80) {
+        $("#site-header").addClass("nav-fixed");
+      } else {
+        $("#site-header").removeClass("nav-fixed");
+      }
+    });
+
+    //Main navigation Active Class Add Remove
+    $(".navbar-toggler").on("click", function () {
+      $("header").toggleClass("active");
+    });
+    $(document).on("ready", function () {
+      if ($(window).width() > 991) {
+        $("header").removeClass("active");
+      }
+      $(window).on("resize", function () {
+        if ($(window).width() > 991) {
+          $("header").removeClass("active");
+        }
+      });
+    });
+  </script>
+  <!--//MENU-JS-->

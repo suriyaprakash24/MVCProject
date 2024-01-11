@@ -1,0 +1,84 @@
+@model PaymentClaims.Models.ProjectManagerLoginViewModel
+
+@{
+    ViewData["Title"] = "Project Manager LogIn";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!-- about breadcrumb -->
+   <section class="w3l-about-breadcrumb position-relative text-center">
+    <div class="breadcrumb-bg breadcrumb-bg-about py-sm-5 py-4">
+      <div class="container py-lg-5 py-3">
+        <h2 class="title">Project Manager LogIn</h2>
+        <ul class="breadcrumbs-custom-path mt-2">
+          <li><a href="#url">Home</a></li>
+          <li class="active"><span class="fa fa-angle-double-right mx-2" aria-hidden="true"></span> Project Manager LogIn </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <!-- //about breadcrumb -->
+<br><br><br>
+<div class="container">
+    <div class="row shadow rounded">
+        <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6">
+            <div>
+                <img src="~/images/Manager.jpg" width="" height="500" class="w-100" />
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6" >
+            <form autocomplete="off" method="post" class="m-3 p-3" action="ProjectManagerLogin">
+        <div class="mb-3">
+            <h2 class ="text-pink fst-italic">Project Manager - LogIn</h2><br>
+            <span class="fst-italic text-muted">Login into your account</span>
+        </div><br>
+        <div class="form-floating mb-3">
+            @Html.TextBoxFor(m => m.Email, new {@class="form-control",placeholder="Email"})
+            
+        </div><br>
+        <div class="form-floating mb-3">
+            @Html.TextBoxFor(m => m.Password,new {@class="form-control",placeholder="Password",type="password"})
+        </div><br>
+        <div class="mb-3">
+            @Html.ValidationSummary()
+        </div>
+        <div class="mb-3">
+            <button class="btn btn-sm btn-dark w-100 p-2" type="submit">LogIn</button>
+        </div>
+        <marquee class="sub-title">
+            @ViewBag.Message
+        </marquee>
+        </form>
+        </div>       
+    </div>
+</div>
+<br><br><br><br>
+
+
+ <!--/MENU-JS-->
+  <script>
+    $(window).on("scroll", function () {
+      var scroll = $(window).scrollTop();
+
+      if (scroll >= 80) {
+        $("#site-header").addClass("nav-fixed");
+      } else {
+        $("#site-header").removeClass("nav-fixed");
+      }
+    });
+
+    //Main navigation Active Class Add Remove
+    $(".navbar-toggler").on("click", function () {
+      $("header").toggleClass("active");
+    });
+    $(document).on("ready", function () {
+      if ($(window).width() > 991) {
+        $("header").removeClass("active");
+      }
+      $(window).on("resize", function () {
+        if ($(window).width() > 991) {
+          $("header").removeClass("active");
+        }
+      });
+    });
+  </script>
+  <!--//MENU-JS-->

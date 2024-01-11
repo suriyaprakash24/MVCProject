@@ -1,0 +1,91 @@
+@model PaymentClaims.Models.ReimbursmentModel
+
+
+@{
+  ViewData["Title"] = "Reimbursement Page";
+  Layout = "~/Views/Shared/_layout-Reimbursement.cshtml";
+}
+<!-- about breadcrumb -->
+<section class="w3l-about-breadcrumb position-relative text-center">
+  <div class="breadcrumb-bg breadcrumb-bg-about py-sm-5 py-4">
+    <div class="container py-lg-5 py-3">
+      <h2 class="title">Reimbursement Page</h2>
+      <ul class="breadcrumbs-custom-path mt-2">
+        <li><a asp-controller="Home" asp-action="Index">Home</a></li>
+        <li class="active"><span class="fa fa-angle-double-right mx-2" aria-hidden="true"></span> Reimbursement Page
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+<!-- //about breadcrumb -->
+<br>
+<h2><u>Reimbursement claims :</u></h2><br>
+<div class="content-info-in row">
+  <div class="col-lg-6 mt-5 about-right-faq align-self order2">
+    <div class="title-content text-left mb-2">
+      <form method="post" asp-action="ReimbursementPage">
+        <h5>Select Reimbursement Type: </h5><br />
+        <select name="Type" id="Type">
+          <option selected disabled>-- Select type --</option>
+          <option value="Travel">Travel</option>
+          <option value="Medicine">Medicine</option>
+          <option value="Accomdation">Accomdation</option>
+          <option value="Food Expenses">Food Expenses</option>
+          <option value="Insurance">Insurance</option>
+          <option value="Others">Others</option>
+        </select><br />
+        <h5>Reason: </h5><br />
+        <textarea id="Reason" name="Reason" placeholder="Enter the reason" rows="4" cols="50"></textarea><br />
+        <h5>Date on Bill: </h5><br />
+        <input type="date" name="Date" /><br />
+        <h5>Upload Bill: </h5><br />
+        <input type="file" name="file" id="file" /><br />
+        <div class="mb-3">
+          <input type="submit" class="btn btn-sm btn-dark btn-style w-100 p-2" asp-action="ReimbursementPage" value="Submit" />
+        </div>
+      </form>
+      @{
+        if (@TempData["Msg"]!=null){
+          <script>
+            alert('@TempData["Msg"]')
+          </script>
+        }
+      }
+    </div>
+  </div>
+</div><br>
+
+<marquee>
+  <h4 class="sub-title">* Before submitting kindly verify once again *
+  </h4>
+</marquee>
+<br>
+<!--/MENU-JS-->
+<script>
+  $(window).on("scroll", function () {
+    var scroll = $(window).scrollTop();
+
+    if (scroll >= 80) {
+      $("#site-header").addClass("nav-fixed");
+    } else {
+      $("#site-header").removeClass("nav-fixed");
+    }
+  });
+
+  //Main navigation Active Class Add Remove
+  $(".navbar-toggler").on("click", function () {
+    $("header").toggleClass("active");
+  });
+  $(document).on("ready", function () {
+    if ($(window).width() > 991) {
+      $("header").removeClass("active");
+    }
+    $(window).on("resize", function () {
+      if ($(window).width() > 991) {
+        $("header").removeClass("active");
+      }
+    });
+  });
+</script>
+<!--//MENU-JS-->

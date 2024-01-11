@@ -1,0 +1,107 @@
+@model List<PaymentClaims.Models.ProjectManagerViewModel>
+
+@{
+    ViewData["Title"] = "Project Manager Page";
+    Layout = "~/Views/Shared/_Layout-AfterLogin.cshtml";
+    string[] TableHeaders = new string[]{"Employee ID"
+      ,"Employee Email"
+      ,"Type"
+      ,"Reason"
+      ,"Date on Bill"
+      ,"Applyed Date"
+      ,"Status"
+    };
+}
+<!-- about breadcrumb -->
+   <section class="w3l-about-breadcrumb position-relative text-center">
+    <div class="breadcrumb-bg breadcrumb-bg-about py-sm-5 py-4">
+      <div class="container py-lg-5 py-3">
+        <h2 class="title">Project Manager Page</h2>
+        <ul class="breadcrumbs-custom-path mt-2">
+          <li><a href="#url">Home</a></li>
+          <li class="active"><span class="fa fa-angle-double-right mx-2" aria-hidden="true"></span> Project Manager Page </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <!-- //about breadcrumb -->
+<br><br><br>
+<form>
+<table class="table table-hover table-bordered">
+  <thead>
+  <tr class = "table-active">
+    @{
+      foreach (var head in TableHeaders){
+        <th>
+          @head
+        </th>
+      }
+    }
+  </tr>
+  </thead>
+  <tbody>
+    @{
+    if(Model!=null){
+      foreach(var Data in Model){
+        <tr>
+          <td>@Data.Emp_ID</td>
+          <td>@Data.Emp_Email</td>
+          <td>@Data.Type</td>
+          <td>@Data.Reason</td>
+          <td>@Data.Date</td>
+          <td>@Data.Applyed_date</td>
+          <td>
+            <div class="btn-holder">
+              <button type="button" width="40px">Approve</button><br />
+              <button type="button" width="40px">Reject</button>
+            </div>
+          </td>
+        </tr>
+      }
+    }
+    else
+    {
+        <tr>
+          <td colspan="8">
+              <div>
+                No Employees has applyed for Reimbursement..!
+              </div>
+          </td>
+        </tr>
+    }
+  }
+  </tbody>
+
+ 
+
+</table>
+</form>
+<br><br><br>
+ <!--/MENU-JS-->
+  <script>
+    $(window).on("scroll", function () {
+      var scroll = $(window).scrollTop();
+
+      if (scroll >= 80) {
+        $("#site-header").addClass("nav-fixed");
+      } else {
+        $("#site-header").removeClass("nav-fixed");
+      }
+    });
+
+    //Main navigation Active Class Add Remove
+    $(".navbar-toggler").on("click", function () {
+      $("header").toggleClass("active");
+    });
+    $(document).on("ready", function () {
+      if ($(window).width() > 991) {
+        $("header").removeClass("active");
+      }
+      $(window).on("resize", function () {
+        if ($(window).width() > 991) {
+          $("header").removeClass("active");
+        }
+      });
+    });
+  </script>
+  <!--//MENU-JS-->

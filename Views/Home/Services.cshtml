@@ -1,0 +1,135 @@
+@{
+    ViewData["Title"] = "Services";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- about breadcrumb -->
+   <section class="w3l-about-breadcrumb position-relative text-center">
+    <div class="breadcrumb-bg breadcrumb-bg-about py-sm-5 py-4">
+      <div class="container py-lg-5 py-3">
+        <h2 class="title">Services</h2>
+        <ul class="breadcrumbs-custom-path mt-2">
+          <li><a href="#url">Home</a></li>
+          <li class="active"><span class="fa fa-angle-double-right mx-2" aria-hidden="true"></span> Services </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <!-- //about breadcrumb -->
+	
+		<!-- /content-6-main-->
+		<div class="content-6-mian py-5">
+			<div class="container py-lg-5">
+				<div class="content-info-in row">
+
+
+					<div class="col-lg-6">
+						<img src="~/images/travel.jpg" class="img-fluid">
+					</div>
+					<div class="col-lg-6 mt-lg-0 mt-5 about-right-faq align-self  pl-lg-4">
+						<div class="title-content text-left mb-2">
+							<h3 class="hny-title">Travel Reimbursement</h3>
+						</div>
+						<p class="mt-3">Travel reimbursement is the way employers pay their employees back for expenses they have incurred during business-related travel.Travel expenses are the ordinary and necessary expenses of traveling away from home for your business, profession, or job. You can't deduct expenses that are lavish or extravagant, or that are for personal purposes.</p>
+					</div>
+
+
+					<div class="col-lg-6 mt-5 about-right-faq align-self order2">
+						<div class="title-content text-left mb-2">
+							<h3 class="hny-title">Medical Reimbursement</h3>
+						</div>
+						<p class="mt-3">Medical reimbursement is basically an arrangement between an employer and an employee under which the employer reimburses a portion of the medical expenses incurred by the employee.Don't claim medical reimbursement for your family members/relations who are not 'dependent' on you as per the Company Rules.</p>
+					</div>
+					<div class="col-lg-6 mt-5 pl-lg-4">
+						<img src="~/images/Medical.jpg" alt="" class="img-fluid">
+					</div>
+				</div>
+			
+	
+	<!-- //content-6-->
+
+<!-- /content-6-main-->
+		<div class="content-6-mian py-5">
+			<div class="container py-lg-5">
+				<div class="content-info-in row">
+					<div class="col-lg-6">
+						<img src="~/images/food.jpg" alt="" class="img-fluid">
+					</div>
+					<div class="col-lg-6 mt-lg-0 mt-5 about-right-faq align-self  pl-lg-4">
+						<div class="title-content text-left mb-2">
+							<h3 class="hny-title">Food Expenses</h3>
+						</div>
+						<p class="mt-3">Food Reimbursement means that you can only claim self-employed subsistence allowance for food or drink that is wholly needed for your business. If a meal serves an additional purpose, such as being a general daily meal that you would eat on your days off, it cannot be claimed.</p>
+					</div>
+
+
+					<div class="col-lg-6 mt-5 about-right-faq align-self order2">
+						<div class="title-content text-left mb-2"><br>
+							<h3 class="hny-title">Telephone Reimbursement</h3>
+						</div>
+						<p class="mt-3">A Telephone reimbursement stipend, or a cell phone allowance, is a sum of money given to employees for them to purchase on their cell phone plans. Further details on what they are: Stipends are often given out monthly. </p>
+					</div>
+					<div class="col-lg-6 mt-5 pl-lg-4"><br>
+						<img src="~/images/telephone.jpg" alt="" class="img-fluid">
+					</div>
+				</div>
+				
+				
+			
+			
+	
+	<!-- //content-6-->
+
+	<!-- /content-6-main-->
+		<div class="content-6-mian py-5">
+			<div class="container py-lg-5">
+				<div class="content-info-in row">
+
+
+					<div class="col-lg-6">
+						<img src="~/images/Insurance.jpg" alt="" class="img-fluid">
+					</div>
+					<div class="col-lg-6 mt-lg-0 mt-5 about-right-faq align-self  pl-lg-4">
+						<div class="title-content text-left mb-2">
+							<h3 class="hny-title">Insurance Reimbursement</h3>
+						</div>
+						<p class="mt-3">Insurance reimbursement is the money paid to a healthcare provider to cover the expenses of the services provided. The provider could be your family doctor, the hospital, a diagnostic facility, etc.</p>
+					</div>
+					</div>
+					</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+  <!-- footer-66 -->
+
+  <!--/MENU-JS-->
+  <script>
+    $(window).on("scroll", function () {
+      var scroll = $(window).scrollTop();
+
+      if (scroll >= 80) {
+        $("#site-header").addClass("nav-fixed");
+      } else {
+        $("#site-header").removeClass("nav-fixed");
+      }
+    });
+
+    //Main navigation Active Class Add Remove
+    $(".navbar-toggler").on("click", function () {
+      $("header").toggleClass("active");
+    });
+    $(document).on("ready", function () {
+      if ($(window).width() > 991) {
+        $("header").removeClass("active");
+      }
+      $(window).on("resize", function () {
+        if ($(window).width() > 991) {
+          $("header").removeClass("active");
+        }
+      });
+    });
+  </script>
+  <!--//MENU-JS-->

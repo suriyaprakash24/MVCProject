@@ -1,0 +1,100 @@
+@model IEnumerable<PaymentClaims.Models.EmployeeLoginViewModel>
+
+
+@{
+  ViewData["Title"] = "Employee Page";
+  Layout = "~/Views/Shared/_Layout-AfterLogin.cshtml";
+}
+
+
+
+<!-- about breadcrumb -->
+<section class="w3l-about-breadcrumb position-relative text-center">
+  <div class="breadcrumb-bg breadcrumb-bg-about py-sm-5 py-4">
+    <div class="container py-lg-5 py-3">
+      <h2 class="title">Employee Page</h2>
+      <ul class="breadcrumbs-custom-path mt-2">
+        <li><a href="#url">Home</a></li>
+        <li class="active"><span class="fa fa-angle-double-right mx-2" aria-hidden="true"></span> Employee Page </li>
+      </ul>
+    </div>
+  </div>
+</section>
+<!-- //about breadcrumb -->
+<br>
+
+
+<div class="content-info-in row">
+  <div class="col-lg-6 mt-5 about-right-faq align-self order2">
+    <div class="title-content text-left mb-2">
+      <h2><u>Employee Details :</u></h2><br><br>
+      @foreach (var Detail in Model)
+      {
+        <h5>Employee ID : @Detail.Emp_ID </h5>
+
+        <br>
+        <h5>Employee Name : @Detail.Emp_Name</h5>
+
+        <br>
+        <h5>Employee Email Address : @Detail.Email</h5>
+
+        <br>
+        <h5>Employee PH : @Detail.Emp_PH</h5>
+
+        <br>
+        <h5>Employee Location : @Detail.Emp_Location</h5>
+
+        <br>
+        <h5>Project Name : @Detail.Project_Name</h5>
+
+        <br>
+        <h5>Manager Name : @Detail.Manager_Name</h5>
+
+        <br>
+        <h5>Manager Email Address : @Detail.Manager_Email</h5>
+
+        <br>
+      }
+      <br>
+    </div>
+  </div>
+
+  <div>
+    <img src="~/images/emp1.jpg" alt="" class="img-fluid">
+  </div>
+</div>
+
+<div>
+  <a class="nav-link btn btn-primary d-none d-lg-block btn-style mr-2" asp-controller="Account"
+    asp-action="ReimbursementPage">For Reimbursement Click Here...</a>
+</div>
+<br><br>
+
+<!--/MENU-JS-->
+<script>
+  $(window).on("scroll", function () {
+    var scroll = $(window).scrollTop();
+
+    if (scroll >= 80) {
+      $("#site-header").addClass("nav-fixed");
+    } else {
+      $("#site-header").removeClass("nav-fixed");
+    }
+  });
+
+  //Main navigation Active Class Add Remove
+  $(".navbar-toggler").on("click", function () {
+    $("header").toggleClass("active");
+  });
+  $(document).on("ready", function () {
+    if ($(window).width() > 991) {
+      $("header").removeClass("active");
+    }
+    $(window).on("resize", function () {
+      if ($(window).width() > 991) {
+        $("header").removeClass("active");
+      }
+    });
+  });
+</script>
+<!--//MENU-JS-->
